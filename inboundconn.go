@@ -131,7 +131,7 @@ func (ibConn *inboundConn) Call(customParameters ...interface{}) (err error) {
 	return errors.New("Unimplemented")
 }
 
-// Get network connect instance
+// Conn gets network connect instance
 func (ibConn *inboundConn) Conn() Conn {
 	return ibConn.conn
 }

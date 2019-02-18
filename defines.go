@@ -322,7 +322,7 @@ func InitLogger(l *log.Logger) {
 	logHandler = logger.LoggerModule(RTMP_LOG_NAME)
 }
 
-// Check error
+// CheckError checks error
 //
 // If error panic
 func CheckError(err error, name string) {
@@ -463,13 +463,13 @@ func DumpBuffer(name string, data []byte, ind int) {
 	}
 }
 
-// Get timestamp
+// GetTimestamp gets timestamp
 func GetTimestamp() uint32 {
 	//return uint32(0)
 	return uint32(time.Now().UnixNano()/int64(1000000)) % MAX_TIMESTAMP
 }
 
-// Read byte from network
+// ReadByteFromNetwork reads byte from network
 func ReadByteFromNetwork(r Reader) (b byte, err error) {
 	retry := 1
 	for {
@@ -494,7 +494,7 @@ func ReadByteFromNetwork(r Reader) (b byte, err error) {
 	return
 }
 
-// Read bytes from network
+// ReadAtLeastFromNetwork reads bytes from network
 func ReadAtLeastFromNetwork(r Reader, buf []byte, min int) (n int, err error) {
 	retry := 1
 	for {

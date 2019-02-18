@@ -51,7 +51,7 @@ type Header struct {
 	ExtendedTimestamp uint32
 }
 
-// Read Base Header from io.Reader
+// ReadBaseHeader reads Base Header from io.Reader
 // High level protocol can use chunk stream ID to query the previous header instance.
 func ReadBaseHeader(rbuf Reader) (n int, fmt uint8, csi uint32, err error) {
 	var b byte
@@ -96,7 +96,7 @@ func ReadBaseHeader(rbuf Reader) (n int, fmt uint8, csi uint32, err error) {
 	return
 }
 
-// Read new chunk stream header from io.Reader
+// ReadHeader reads new chunk stream header from io.Reader
 func (header *Header) ReadHeader(rbuf Reader, vfmt uint8, csi uint32, lastheader *Header) (n int, err error) {
 	header.Fmt = vfmt
 	header.ChunkStreamID = csi

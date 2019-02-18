@@ -33,7 +33,7 @@ var (
 
 type ServerHandler struct{}
 
-// InboundConn handler funcions
+// handler funcions
 func (handler *ServerHandler) OnStatus(conn rtmp.InboundConn) {
 	status, err := g_ibConn.Status()
 	fmt.Printf("@@@@@@@@@@@@@status: %d, err: %v\n", status, err)

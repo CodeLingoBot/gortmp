@@ -420,7 +420,7 @@ func (obConn *outboundConn) Call(name string, customParameters ...interface{}) (
 
 }
 
-// Get network connect instance
+// Conn gets network connect instance
 func (obConn *outboundConn) Conn() Conn {
 	return obConn.conn
 }
